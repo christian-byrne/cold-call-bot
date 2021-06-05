@@ -24,17 +24,23 @@ message["To"] = recipient
 
 # Create the plain-text and HTML version of your message
 backup_text = "backup if recipient cant render HTML"
-html = open("company.html", "r").read()
+html = open("letterhead-template.html", "r").read()
 
 
 # recipient params
-url = "https://trevor-reznik.github.io/guides/email-template/1.mp3"
+inline_url = "https://trevor-reznik.github.io/guides/email-template/1.mp3"
+external_url = "https://bymyself.life/niq-venus.html"
+recipient_name = "{test name}"
+artist_name = "{artist test name}"
 
 replace_dict = {
     "$ARTISTNAME" : recipient,
-    "$MUSICLINK" : url,
-
+    "$MUSICLINK" : inline_url,
+    "$EXTERNALLINKL" : external_url,
+    "$RECIPIENTNAME" : recipient_name,
+    "$ARTISTNAME" : artist_name
 }
+
 for key, new in replace_dict.items():
     html = html.replace(key, new)
 
