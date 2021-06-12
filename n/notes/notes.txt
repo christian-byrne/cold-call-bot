@@ -1,0 +1,10 @@
+youtube-dl 
+youtube-dl --help (for options menu)
+
+youtube-dl link <------downloads whole video and or playlist
+
+
+
+to extract a sub clip (a piece) from a video 
+
+ffmpeg -ss 00:00:00 -i input.wmv -c copy -t 00:00:00 output.wmv
